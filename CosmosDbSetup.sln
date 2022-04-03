@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3984C7BE-0CB6-410F-A16E-7D0439C6A28B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosDbSetup", "src\CosmosDbSetup\CosmosDbSetup.csproj", "{74B2F989-25F3-4755-A40A-1C1F2274041E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74B2F989-25F3-4755-A40A-1C1F2274041E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74B2F989-25F3-4755-A40A-1C1F2274041E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74B2F989-25F3-4755-A40A-1C1F2274041E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74B2F989-25F3-4755-A40A-1C1F2274041E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{74B2F989-25F3-4755-A40A-1C1F2274041E} = {3984C7BE-0CB6-410F-A16E-7D0439C6A28B}
+	EndGlobalSection
+EndGlobal
