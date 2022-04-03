@@ -5,14 +5,23 @@ Instantiate the Azure Cosmos DB by creating databases and containers
 [![adasd](https://img.shields.io/badge/Docker_Hub-robinmanuelthiel/cosmos--db--setup:latest-blue?logo=docker)](https://hub.docker.com/r/robinmanuelthiel/cosmos-db-setup/)
 
 ```bash
-docker run --rm robinmanuelthiel/speedtest:latest \
+docker run --rm \
   --env CONNECTION_STRING=AccountEndpoint=https://cosmosdb:8081/;AccountKey=xxxxxxxxxxx \
-  --env DATABASE_NAME=my-database \
-  --env CONTAINER_NAME=my-container \
-  --env CONTAINER_PARTITION_KEY=/id
+  robinmanuelthiel/speedtest:latest 
 ```
 
-## Setup Cosmos DB Emulator with Docker Compose 
+## Environment Variables
+
+| Environment Variable | Default |
+| -- | -- |
+| `CONNECTION_STRING` | `AccountEndpoint=https://cosmosdb:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==` |
+| `DATABASE_NAME` | `database` |
+| `CONTAINER_NAME` | `container` |
+| `CONTAINER_PARTITION_KEY` | `/id` |
+
+## Examples
+
+### Setup Cosmos DB Emulator with Docker Compose 
 
 ```yaml
 version: '3.6'
