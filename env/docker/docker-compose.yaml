@@ -5,7 +5,7 @@ services:
       context: ../../
       dockerfile: Dockerfile    
     environment:
-      - DELAY=15000
+      - DELAY=0
     depends_on:
       - cosmosdb
 

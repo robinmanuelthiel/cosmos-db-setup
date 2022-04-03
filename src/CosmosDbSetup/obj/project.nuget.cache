@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9pWT0LQaDs8yN3yy5qhodvELPrQjW3rvgWo506V238BhFoON4hqrU0vdeIJIpiATBZk9Ey3BCRh8IntBC/7v9Q==",
+  "dgSpecHash": "oJqT3MiIQZwBm0cgUMU7tYIu5/BtqmriUCh8A7R8A7KbtHJ52/HwVOeThTl4egp2V44ERviZsa3zz+AI7TUHDA==",
   "success": true,
   "projectFilePath": "/Users/robinmanuelthiel/Source/Private/cosmos-db-emulator-setup/src/CosmosDbSetup/CosmosDbSetup.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "/Users/robinmanuelthiel/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "/Users/robinmanuelthiel/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
     "/Users/robinmanuelthiel/.nuget/packages/newtonsoft.json/10.0.2/newtonsoft.json.10.0.2.nupkg.sha512",
+    "/Users/robinmanuelthiel/.nuget/packages/polly/7.2.3/polly.7.2.3.nupkg.sha512",
     "/Users/robinmanuelthiel/.nuget/packages/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/robinmanuelthiel/.nuget/packages/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/Users/robinmanuelthiel/.nuget/packages/runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl/4.3.0/runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
