@@ -27,9 +27,7 @@ docker run --rm \
 version: '3.6'
 services:
   setup:
-    build:
-      context: ../../
-      dockerfile: Dockerfile
+    image: robinmanuelthiel/cosmos-db-setup:latest
     depends_on:
       - cosmosdb
 
