@@ -32,7 +32,6 @@ jobs:
       - run: |
           docker buildx build \
             --push \
-            --platform linux/arm/v7,linux/arm64/v8,linux/amd64 \
             --tag robinmanuelthiel/cosmos-db-setup:${{ github.event.inputs.version }} \
             --tag robinmanuelthiel/cosmos-db-setup:latest \
             .
