@@ -3,9 +3,7 @@ services:
   setup:
     build:
       context: ../../
-      dockerfile: Dockerfile    
-    environment:
-      - DELAY=0
+      dockerfile: Dockerfile
     depends_on:
       - cosmosdb
 
