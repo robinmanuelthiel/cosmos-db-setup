@@ -28,6 +28,8 @@ version: '3.6'
 services:
   setup:
     image: robinmanuelthiel/cosmos-db-setup:latest
+    environment:
+      - CONTAINER_NAME=mycontainer
     depends_on:
       - cosmosdb
 
