@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "oJqT3MiIQZwBm0cgUMU7tYIu5/BtqmriUCh8A7R8A7KbtHJ52/HwVOeThTl4egp2V44ERviZsa3zz+AI7TUHDA==",
+  "dgSpecHash": "EfcJQtOD337+R1kpdYiPS0slsA61FVQ318Jy5auzswOylqpjl3I48MZcmZX0X7QWclAQ5vO0cdvsK+QTXU2VCw==",
   "success": true,
   "projectFilePath": "/Users/robinmanuelthiel/Source/Private/cosmos-db-emulator-setup/src/CosmosDbSetup/CosmosDbSetup.csproj",
   "expectedPackageFiles": [
     "/Users/robinmanuelthiel/.nuget/packages/azure.core/1.19.0/azure.core.1.19.0.nupkg.sha512",
+    "/Users/robinmanuelthiel/.nuget/packages/fluentvalidation/10.4.0/fluentvalidation.10.4.0.nupkg.sha512",
     "/Users/robinmanuelthiel/.nuget/packages/microsoft.azure.cosmos/3.26.1/microsoft.azure.cosmos.3.26.1.nupkg.sha512",
     "/Users/robinmanuelthiel/.nuget/packages/microsoft.bcl.asyncinterfaces/1.0.0/microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
     "/Users/robinmanuelthiel/.nuget/packages/microsoft.bcl.hashcode/1.1.0/microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

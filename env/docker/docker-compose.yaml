@@ -4,6 +4,8 @@ services:
     build:
       context: ../../
       dockerfile: Dockerfile
+    command:
+      - "{\"databaseName\": \"test\", \"containers\": [{\"name\": \"mycontainer\", \"partitionKey\": \"/id\"}]}"
     depends_on:
       - cosmosdb
 

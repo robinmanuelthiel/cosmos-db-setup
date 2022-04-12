@@ -1,3 +1,6 @@
+using System.Text.Json;
+using FluentValidation;
+
 namespace CosmosDbSetup;
 
 public static class Helpers
@@ -17,5 +20,31 @@ public static class Helpers
             }
         }
         return value;
+    }
+
+    public static Configuration GetConfigFromArgs(string[] args)
+    {
+        try
+        {
+            var json = args[0];
+            Console.WriteLine($"Parsing configuration from JSON: {json}");
+            var config = JsonSerializer.Deserialize<Configuration>(json, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            if (config == null)
+            {
+                throw new Exception("Could not parse configuration.");
+            }
+
+            var validator = new ConfigurationValidator();
+            validator.ValidateAndThrow(config);
+            return config;
+        }
+        catch (IndexOutOfRangeException)
+        {
+            throw new Exception("Missing required argument. Please provide a configuration via args");
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("Error parsing arguments.", ex);
+        }
     }
 }
