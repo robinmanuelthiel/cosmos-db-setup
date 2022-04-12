@@ -3,7 +3,8 @@ using Microsoft.Azure.Cosmos;
 using Polly;
 
 var config = Helpers.GetConfigFromArgs(args);
-string connectionString = Helpers.GetFromEnv("CONNECTION_STRING", "AccountEndpoint=https://cosmosdb:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==");
+string connectionString = Helpers.GetFromEnv("CONNECTION_STRING", "AccountEndpoint=https://localhost:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==");
+Console.WriteLine($"Connection string: {connectionString}");
 
 CosmosClient client = new CosmosClient(connectionString, new CosmosClientOptions()
 {
@@ -11,8 +12,9 @@ CosmosClient client = new CosmosClient(connectionString, new CosmosClientOptions
     {
         HttpMessageHandler httpMessageHandler = new HttpClientHandler()
         {
-            ServerCertificateCustomValidationCallback = (req, cert, chain, errors) => true
+            ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
         };
+
         return new HttpClient(httpMessageHandler);
     },
     ConnectionMode = ConnectionMode.Gateway
@@ -20,7 +22,10 @@ CosmosClient client = new CosmosClient(connectionString, new CosmosClientOptions
 
 await Policy
     .Handle<Exception>()
-    .WaitAndRetryAsync(5, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)))
+    .WaitAndRetryAsync(5, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)), (exception, timeSpan, retryCount, context) =>
+    {
+        Console.WriteLine($"Retry {retryCount}/5...");
+    })
     .ExecuteAsync(async () =>
     {
         Console.WriteLine($"Creating database {config.DatabaseName}...");
