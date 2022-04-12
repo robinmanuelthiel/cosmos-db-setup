@@ -1,23 +1,35 @@
 # Azure Cosmos DB Setup Container
 
-Instantiate the Azure Cosmos DB by creating databases and containers 
+Instantiate the Azure Cosmos DB by creating databases and containers
 
 [![adasd](https://img.shields.io/badge/Docker_Hub-robinmanuelthiel/cosmos--db--setup:latest-blue?logo=docker)](https://hub.docker.com/r/robinmanuelthiel/cosmos-db-setup/)
 
 ```bash
-docker run --rm \
-  --env CONNECTION_STRING=AccountEndpoint=https://cosmosdb:8081/;AccountKey=xxxxxxxxxxx \
-  robinmanuelthiel/speedtest:latest 
+docker run --rm robinmanuelthiel/speedtest:latest -- "{\"databaseName\": \"test\", \"containers\": [{\"name\": \"mycontainer\", \"partitionKey\": \"/id\"}]}"
 ```
 
-## Environment Variables
+## Configuration
+
+To configure the container, you need to provide a JSON configuration as an argument.
+
+```json
+{
+  "databaseName": "test",
+  "containers": [
+    {
+      "name": "mycontainer", 
+      "partitionKey": "/id"
+    }
+  ]
+}
+```
+
+Additionally, you can set the following environment variables:
+
 
 | Environment Variable | Default |
 | -- | -- |
 | `CONNECTION_STRING` | `AccountEndpoint=https://cosmosdb:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==` |
-| `DATABASE_NAME` | `database` |
-| `CONTAINER_NAME` | `container` |
-| `CONTAINER_PARTITION_KEY` | `/id` |
 
 ## Examples
 
@@ -28,8 +40,8 @@ version: '3.6'
 services:
   setup:
     image: robinmanuelthiel/cosmos-db-setup:latest
-    environment:
-      - CONTAINER_NAME=mycontainer
+    command:
+      - "{\"databaseName\": \"test\", \"containers\": [{\"name\": \"mycontainer\", \"partitionKey\": \"/id\"}]}"
     depends_on:
       - cosmosdb
 
