@@ -17,7 +17,7 @@ To configure the container, you need to provide a JSON configuration as an argum
   "databaseName": "test",
   "containers": [
     {
-      "name": "mycontainer", 
+      "name": "mycontainer",
       "partitionKey": "/id"
     }
   ]
@@ -26,14 +26,14 @@ To configure the container, you need to provide a JSON configuration as an argum
 
 Additionally, you can set the following environment variables:
 
-
-| Environment Variable | Default |
-| -- | -- |
-| `CONNECTION_STRING` | `AccountEndpoint=https://cosmosdb:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==` |
+| Environment Variable | Description | Default |
+| -- | -- | -- |
+| `CONNECTION_STRING` | | `AccountEndpoint=https://cosmosdb:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==` |
+| `DELAY` | The delay in seconds to wait until start seeding | `0` |
 
 ## Examples
 
-### Setup Cosmos DB Emulator with Docker Compose 
+### Setup Cosmos DB Emulator with Docker Compose
 
 ```yaml
 version: '3.6'

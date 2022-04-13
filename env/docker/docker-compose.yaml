@@ -5,7 +5,7 @@ services:
       context: ../../
       dockerfile: Dockerfile
     command:
-      - "{\"databaseName\": \"test\", \"containers\": [{\"name\": \"mycontainer\", \"partitionKey\": \"/id\"}]}"
+      - "{\"databaseName\": \"subscriptions\", \"containers\": [{\"name\": \"addons\", \"partitionKey\": \"/partitionKey\"}, {\"name\": \"consumptions\", \"partitionKey\": \"/tenantId\"}, {\"name\": \"features\", \"partitionKey\": \"/partitionKey\"}, {\"name\": \"quotaunits\", \"partitionKey\": \"/partitionKey\"}, {\"name\": \"subscriptions\", \"partitionKey\": \"/partitionKey\"}, {\"name\": \"tenants\", \"partitionKey\": \"/partitionKey\"}]}"
     depends_on:
       - cosmosdb
 

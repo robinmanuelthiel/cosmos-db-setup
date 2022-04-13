@@ -2,6 +2,13 @@
 using Microsoft.Azure.Cosmos;
 using Polly;
 
+var delay = Convert.ToInt32(Helpers.GetFromEnv("DELAY", "0"));
+if (delay > 0)
+{
+    Console.WriteLine($"Delaying for {delay} seconds");
+    System.Threading.Thread.Sleep(delay * 1000);
+}
+
 var config = Helpers.GetConfigFromArgs(args);
 string connectionString = Helpers.GetFromEnv("CONNECTION_STRING", "AccountEndpoint=https://localhost:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==");
 Console.WriteLine($"Connection string: {connectionString}");
